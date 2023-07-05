@@ -9,12 +9,14 @@
 
 - task: PublishPipelineArtifact@1
   inputs:
-    artifactName: e2e-server
+    artifactName: 'e2e-server'
     targetPath: '$(Build.ArtifactStagingDirectory)'
     publishLocation: 'pipeline'
   displayName: 'Publish npm artifact'
+
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: '$(Pipeline.Workspace)'
-    artifact: 'artifakt'
+    artifactName: 'artifakt'
     publishLocation: 'pipeline'
+  displayName: 'Publish custom artifact'
